@@ -26,6 +26,7 @@ var uploadImgSrc;
 // Canvasの準備
 
 function loadLocalImage(e, dx, dy) {
+    console.log(e.dx);
     // ファイル情報を取得
     var fileData = e.target.files[0];
 
@@ -41,15 +42,15 @@ function loadLocalImage(e, dx, dy) {
     reader.onload = function() {
         // Canvas上に表示する
         uploadImgSrc = reader.result;
-        canvasDraw(0, 0);
+        canvasDraw(dx, dy);
     }
     // ファイル読み込みを実行
     reader.readAsDataURL(fileData);
 }
 
 // ファイルが指定された時にloadLocalImage()を実行
-file1.addEventListener('change', loadLocalImage(0, 0), false);
-file2.addEventListener('change', loadLocalImage(100, 100), false);
+file1.addEventListener('change', function(ev){loadLocalImage(ev, 0, 0)}, true);
+file2.addEventListener('change', function(ev){loadLocalImage(ev, 100, 100)}, true);
 
 // Canvas上に画像を表示する
 function canvasDraw(dx, dy) {
