@@ -54,10 +54,10 @@ function canvasDraw() {
 
     // Canvas上に画像を表示
     var img = new Image();
-    img.src = uploadImgSrc;
     img.crossOrigin = 'anonymous';
+    img.src = uploadImgSrc;
     img.onload = function() {
-        //ctx.drawImage(img, 0, 0, 50, 50);
+        ctx.drawImage(img, 0, 0, 50, 50);
 
         // canvasを画像に変換
         var data = canvas.toDataURL();
