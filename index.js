@@ -19,12 +19,13 @@ img.onload = function() {
 
 /* 画像を読み込んで画像を表示 */
 
-var file = document.getElementById('file');
+var file1 = document.getElementById('file1');
+var file2 = document.getElementById('file2');
 var uploadImgSrc;
 
 // Canvasの準備
 
-function loadLocalImage(e) {
+function loadLocalImage(e, dx, dy) {
     // ファイル情報を取得
     var fileData = e.target.files[0];
 
@@ -40,24 +41,25 @@ function loadLocalImage(e) {
     reader.onload = function() {
         // Canvas上に表示する
         uploadImgSrc = reader.result;
-        canvasDraw();
+        canvasDraw(0, 0);
     }
     // ファイル読み込みを実行
     reader.readAsDataURL(fileData);
 }
 
 // ファイルが指定された時にloadLocalImage()を実行
-file.addEventListener('change', loadLocalImage, false);
+file1.addEventListener('change', loadLocalImage(0, 0), false);
+file2.addEventListener('change', loadLocalImage(100, 100), false);
 
 // Canvas上に画像を表示する
-function canvasDraw() {
+function canvasDraw(dx, dy) {
 
     // Canvas上に画像を表示
     var img = new Image();
     img.crossOrigin = 'anonymous';
     img.src = uploadImgSrc;
     img.onload = function() {
-        ctx.drawImage(img, 0, 0, 50, 50);
+        ctx.drawImage(img, dx, dy, 50, 50);
 
         // canvasを画像に変換
         var data = canvas.toDataURL();
