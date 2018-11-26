@@ -1,8 +1,8 @@
 /* 画像プリロード */
 
 var canvas = document.getElementById('canvas');
-var canvasWidth = 400;
-var canvasHeight = 300;
+var canvasWidth = 800;
+var canvasHeight = 450;
 
 // Canvasの準備
 canvas.width = canvasWidth;
@@ -11,7 +11,7 @@ var ctx = canvas.getContext('2d');
 
 // Canvas上に画像を表示
 var img = new Image();
-img.src = '2.jpg';
+img.src = 'background.png';
 img.onload = function() {
     ctx.drawImage(img, 0, 0, canvasWidth, this.height * (canvasWidth / this.width));
 }
@@ -49,8 +49,8 @@ function loadLocalImage(e, dx, dy) {
 }
 
 // ファイルが指定された時にloadLocalImage()を実行
-file1.addEventListener('change', function(ev){loadLocalImage(ev, 0, 0)}, true);
-file2.addEventListener('change', function(ev){loadLocalImage(ev, 100, 100)}, true);
+file1.addEventListener('change', function(ev){loadLocalImage(ev, 100, 100)}, true);
+file2.addEventListener('change', function(ev){loadLocalImage(ev, 500, 100)}, true);
 
 // Canvas上に画像を表示する
 function canvasDraw(dx, dy) {
@@ -60,7 +60,7 @@ function canvasDraw(dx, dy) {
     img.crossOrigin = 'anonymous';
     img.src = uploadImgSrc;
     img.onload = function() {
-        ctx.drawImage(img, dx, dy, 50, 50);
+        ctx.drawImage(img, dx, dy, 200, 200);
 
         // canvasを画像に変換
         var data = canvas.toDataURL();
