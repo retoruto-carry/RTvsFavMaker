@@ -10,7 +10,7 @@ var willShowDLLink = false;
 
 // Canvas上に背景画像を表示
 var img = new Image();
-img.src = 'background3.png';
+img.src = 'background4.png';
 img.onload = function() {
     ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
 }
@@ -81,7 +81,7 @@ function canvasDraw(dx, dy) {
         dy = dy - height/2;
 
         ctx.drawImage(img, dx, dy, width, height );
-        
+
 
         if (willShowDLLink) {
 
