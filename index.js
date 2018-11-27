@@ -68,30 +68,30 @@ function canvasDraw(dx, dy) {
             console.log("横長画像");
             var width = maxWidth;
             var height = maxWidth * (this.height / this.width);
-            dx = dx - width/2;
-            dy = dy - height/2;
-            ctx.drawImage(img, dx, dy, width, height);
             
         } else {
 
             console.log("縦長画像");
             var width = maxHeight * (this.width / this.height);
             var height = maxHeight;
-            dx = dx - width/2;
-            dy = dy - height/2;
-            ctx.drawImage(img, dx, dy, width, height );
 
         }
 
+        dx = dx - width/2;
+        dy = dy - height/2;
+
+        ctx.drawImage(img, dx, dy, width, height );
+        
+
         if (willShowDLLink) {
 
-        // canvasを画像に変換
-        var data = canvas.toDataURL();
+            // canvasを画像に変換
+            var data = canvas.toDataURL();
 
-        // DLリンクを表示
-        $('#result').attr("href", data);
-        $("#result").attr("download", "sample.png");
-        $('#result').text("画像をダウンロード");
+            // DLリンクを表示
+            $('#result').attr("href", data);
+            $("#result").attr("download", "sample.png");
+            $('#result').text("画像をダウンロード");
 
         } else {
 
