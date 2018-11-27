@@ -8,7 +8,7 @@ var ctx = canvas.getContext('2d');
 
 // Canvas上に背景画像を表示
 var img = new Image();
-img.src = 'background2.png';
+img.src = 'background3.png';
 img.onload = function() {
     ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
 }
