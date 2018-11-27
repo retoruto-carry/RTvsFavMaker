@@ -4,21 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <h1>RT vs Fav 画像メーカー</h1>
-    <h1>1</h1>
-    <div class="upload"><input type="file" name="file1" id="file1"></div>
-    <h1>2</h1>
-    <div class="upload"><input type="file" name="file2" id="file2"></div>
-    <canvas id="canvas"></canvas>
-    <a id="result"></a>
-    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">RT vs Fav 画像メーカー</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>RT vs Fav 画像メーカー</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">例えばこういう画像が簡単に作れます</h5>
+                <p class="card-text">ツイッターにつぶやいて遊びましょう(*´∇｀*)</p>
+            </div>
+            <img class="card-img-bottom" src=".../100px180/" alt="Card image cap">
+        </div>
+        <h2>1つめの画像を選択</h2>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="file1" name="file1" lang="ja">
+            <label class="custom-file-label" for="customFileLang">ファイルを選択</label>
+        </div>
+        <h2>2つ目の画像を選択</h2>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="file2" name="file2" lang="ja">
+            <label class="custom-file-label" for="customFileLang">ファイルを選択</label>
+        </div>
+        <h2>
+            <a id="result"></a>
+        </h2>
+        <canvas id="canvas"></canvas>
+        <h2>
+            <a id="result"></a>
+        </h2>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
