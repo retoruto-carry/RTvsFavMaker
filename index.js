@@ -10,7 +10,7 @@ var willShowDLLink = false;
 
 // Canvas上に背景画像を表示
 var img = new Image();
-img.src = 'background4.png';
+img.src = 'img/background4.png';
 img.onload = function() {
     ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
 }
@@ -90,7 +90,7 @@ function canvasDraw(dx, dy) {
 
             // DLリンクを表示
             $('#result').attr("href", data);
-            $("#result").attr("download", "sample.png");
+            $("#result").attr("download", "「いいねvsRT画像」メーカー.png");
             $('#result').text("画像をダウンロード");
 
         } else {
