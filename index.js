@@ -23,11 +23,8 @@ var file1 = document.getElementById('file1');
 var file2 = document.getElementById('file2');
 var uploadImgSrc;
 
-// Canvasの準備
-
 function loadLocalImage(e, dx, dy) {
-    console.log(e.dx);
-    // ファイル情報を取得
+
     var fileData = e.target.files[0];
 
     // 画像ファイル以外は処理を止める
@@ -36,9 +33,8 @@ function loadLocalImage(e, dx, dy) {
         return;
     }
 
-    // FileReaderオブジェクトを使ってファイル読み込み
+    // ファイル読み込み
     var reader = new FileReader();
-    // ファイル読み込みに成功したときの処理
     reader.onload = function() {
         // Canvas上に表示する
         uploadImgSrc = reader.result;
@@ -65,12 +61,10 @@ function canvasDraw(dx, dy) {
         // canvasを画像に変換
         var data = canvas.toDataURL();
 
-        // ダウンロードリンクを生成して出力
-        var dlLink = document.createElement('a');
-        dlLink.href = data;
-        dlLink.download = 'sample.png';
-        dlLink.innerText = 'ダウンロード';
-        document.getElementById('result').appendChild(dlLink);
+        // DLリンクを表示
+        $('#result').attr("href", data);
+        $("#result").attr("download", "sample.png");
+        $('#result').text("ダウンロード");
     }
 
 }
