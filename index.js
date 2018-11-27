@@ -6,6 +6,8 @@ canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 var ctx = canvas.getContext('2d');
 
+var willShowDLLink = false;
+
 // Canvas上に背景画像を表示
 var img = new Image();
 img.src = 'background3.png';
@@ -80,14 +82,22 @@ function canvasDraw(dx, dy) {
             ctx.drawImage(img, dx, dy, width, height );
 
         }
-        
+
+        if (willShowDLLink) {
+
         // canvasを画像に変換
         var data = canvas.toDataURL();
 
         // DLリンクを表示
         $('#result').attr("href", data);
         $("#result").attr("download", "sample.png");
-        $('#result').text("ダウンロード");
+        $('#result').text("画像をダウンロード");
+
+        } else {
+
+            willShowDLLink = true;
+
+        }
     }
 
 }
