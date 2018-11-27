@@ -22,24 +22,30 @@
     </nav>
 
     <div class="container">
-        <h1>RT vs Fav 画像メーカー</h1>
-        <div class="card">
+        <div class="jumbotron jumbotron-fluid mt-4" style="padding:20px">
+            <div class="container">
+                <h1 style="font-size:2rem">RT vs Fav 画像メーカー</h1>
+            </div>
+        </div>
+        <div class="card m-3">
             <div class="card-body">
                 <h5 class="card-title">例えばこういう画像が簡単に作れます</h5>
                 <p class="card-text">ツイッターにつぶやいて遊びましょう(*´∇｀*)</p>
             </div>
-            <img class="card-img-bottom" src=".../100px180/" alt="Card image cap">
+            <img  class="float-left img-fluid" src="kinoko_takenoko.png" alt="Card image cap" width="400px">
         </div>
-        <h2>1つめの画像を選択</h2>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="file1" name="file1" lang="ja">
-            <label class="custom-file-label" for="customFileLang">ファイルを選択</label>
+        <div class="card m-3">
+            <div class="card-body">
+                <h5 class="card-title">10秒で作ってみよう</h5>
+
+                <p class="mt-4">1つめの画像を選択</p>
+                <input type="file" class="form-control-file" id="file1" name="file1">
+                <p class="mt-4">2つ目の画像を選択</p>
+                <input type="file" class="form-control-file" id="file2" name="file2">
+                
+            </div>
         </div>
-        <h2>2つ目の画像を選択</h2>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="file2" name="file2" lang="ja">
-            <label class="custom-file-label" for="customFileLang">ファイルを選択</label>
-        </div>
+        
         <h2>
             <a id="result"></a>
         </h2>

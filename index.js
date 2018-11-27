@@ -1,14 +1,14 @@
 // canvasの準備
 var canvas = document.getElementById('canvas');
-var canvasWidth = 800;
-var canvasHeight = 450;
+var canvasWidth = 480;
+var canvasHeight = 270;
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 var ctx = canvas.getContext('2d');
 
 // Canvas上に背景画像を表示
 var img = new Image();
-img.src = 'background.png';
+img.src = 'background2.png';
 img.onload = function() {
     ctx.drawImage(img, 0, 0, canvasWidth, canvasHeight);
 }
@@ -21,8 +21,8 @@ var uploadImgSrc;
 
 // ファイルが指定された時にloadLocalImage()を実行
 // (dx, dy) には画像を配置する中心点を渡す
-file1.addEventListener('change', function(ev){loadLocalImage(ev, (((canvasWidth / 4) * 1) - 30), (canvasHeight/2 - 30))}, true);
-file2.addEventListener('change', function(ev){loadLocalImage(ev, (((canvasWidth / 4) * 3) + 30), (canvasHeight/2 - 30))}, true);
+file1.addEventListener('change', function(ev){loadLocalImage(ev, (((canvasWidth / 4) * 1) - 10), (canvasHeight/2 - 10))}, true);
+file2.addEventListener('change', function(ev){loadLocalImage(ev, (((canvasWidth / 4) * 3) + 10), (canvasHeight/2 - 10))}, true);
 
 
 function loadLocalImage(e, dx, dy) {
@@ -56,8 +56,8 @@ function canvasDraw(dx, dy) {
     img.src = uploadImgSrc;
     img.onload = function() {
         
-        var maxWidth = 200;
-        var maxHeight  = 200;
+        var maxWidth = 150;
+        var maxHeight  = 150;
 
         var isYokonaga = this.width > this.height;
 
